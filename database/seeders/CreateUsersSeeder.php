@@ -19,12 +19,14 @@ class CreateUsersSeeder extends Seeder
                 'name' => 'Admin',
                 'email' => 'admin@threefalcan.com',
                 'is_admin' => '1',
+                'mobile' => '1234567890',
                 'password' => bcrypt('#3falcan'),
             ],
             [
                 'name' => 'User',
                 'email' => 'user@threefalcan.com',
                 'is_admin' => '0',
+                'mobile' => '1234567891',
                 'password' => bcrypt('#3falcan'),
             ],
         ];

@@ -27,19 +27,87 @@
 
     <!--important Javascript-->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/jquery-validation/jquery.validate.min.js') }}"></script>
+    <script src="{{ asset('js/jquery-validation/additional-methods.min.js') }}"></script>
     <script src="{{ asset('js/sidebar.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}" />
     <script src="{{ asset('js/owl.carousel.js') }}"></script>
 
     <!--Manual Javascript-->
     <script>
-        toastr.info('My name is Inigo Montoya!')
         $(window).scroll(function () {
             if ($(window).scrollTop() >= 50) {
                 $(".filter-fixed").addClass("filter-fixed-top shadow-lg");
             } else {
                 $(".filter-fixed").removeClass("filter-fixed-top shadow-lg");
             }
+        });
+        $(() => {
+            $('#formregister').validate({
+                rules: {
+                    name: {
+                        required: true,
+                        string: true,
+                    },
+                    email: {
+                        required: true,
+                        email: true,
+                    },
+                    password: {
+                        required: true,
+                        minlength: 8
+                    },
+                    mobile: {
+                        required: true
+                    },
+                },
+                messages: {
+                    email: {
+                        required: "Please enter a email address",
+                        email: "Please enter a vaild email address"
+                    },
+                    password: {
+                        required: "Please provide a password",
+                        minlength: "Your password must be at least 5 characters long"
+                    },
+                    name: "Please enter your full name",
+                    mobile: "Please enter a valid mobile number"
+                },
+                errorElement: 'span',
+                errorPlacement: function (error, element) {
+                    error.addClass('invalid-feedback');
+                    element.closest('.form-group').append(error);
+                },
+                highlight: function (element, errorClass, validClass) {
+                    $(element).addClass('is-invalid');
+                },
+                unhighlight: function (element, errorClass, validClass) {
+                    $(element).removeClass('is-invalid');
+                }
+            });
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $("#formregister").on("submit", function(e) {
+                e.preventDefault();
+                if($("#formregister").valid()) {
+                    $.ajax({
+                        url: "{{ route('register') }}",
+                        method: "POST",
+                        data: $("#formregister").serialize(),
+                        success: function(response) {
+                            toastr.success("success");
+                        },
+                        error: function(reject) {
+                            $.each(reject.responseJSON.errors, function (key, item) {
+                                toastr.error(item);
+                            });
+                        }
+                    });
+                }
+            });
         });
     </script>
     <!--Manual Javascript-->

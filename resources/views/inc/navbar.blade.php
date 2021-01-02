@@ -16,7 +16,7 @@
                 <a class="nav-link ml-0 font-14" href=""> Contact Us</a>
                 <a class="nav-link ml-0 font-14" href=""> Blogs</a>
                 <div class="btn-group">
-                    <button type="button" class="btn btn-no-color btn-block px-4" data-toggle="modal" data-target="#login-popup">Login/Signup</button>
+                    <button type="button" class="btn btn-no-color btn-block px-4" data-toggle="modal" data-target="#login-popup">Login | Signup</button>
                     <!--<button type="button" class="btn btn-no-color dropdown-toggle btn-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Login / Signup
             </button>
                 <div class="dropdown-menu dropdown-menu-right">
@@ -48,7 +48,7 @@
             </div>
             <form class="row col-md-12 p-3 ml-0 border-top">
                 <div class="col-md-12 mt-4 btn-group">
-                    <button type="button" class="btn btn-no-color btn-block" data-toggle="modal" data-target="#login-popup">Login/Signup</button>
+                    <button type="button" class="btn btn-no-color btn-block" data-toggle="modal" data-target="#login-popup">Login | Signup</button>
                     <!-- <button type="button" class="btn btn-no-color dropdown-toggle btn-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Login/Signup
             </button>
                 <div class="dropdown-menu">

@@ -28,8 +28,8 @@
                             </div>
                             <button type="submit" class="btn btn-no-color btn-block text-black knocked-input mb-3" id="">Log In</button>
 
-                            <a class="float-right text-dark font-weight-bold" id="register-btn" href="#!">Register</a>
-                            <a class="text-dark font-weight-bold" id="forgot-btn" href="#!">Forget Password</a>
+                            <a class="float-right text-dark font-weight-bold" id="register-btn" href="javascript:;">Register</a>
+                            <a class="text-dark font-weight-bold" id="forgot-btn" href="javascript:;">Forget Password</a>
                         </div>
                     </form>
 
@@ -46,34 +46,33 @@
                         </div>
                     </form>
 
-                    <form class="py-3 signup-content" method="POST" action="{{ route('register') }}" id="formregister" name="formregister" style="display: none;">
-                        @csrf
+                    <form class="py-3 signup-content"  id="formregister" style="display: none;">
                         <div class="form-group">
-                            <input type="text" name="registername" class="form-control knocked-input border" placeholder="Name" />
+                            <input type="text" name="name" class="form-control knocked-input border" placeholder="Name" />
                         </div>
 
                         <div class="form-group">
-                            <input type="email" name="registeremail" class="form-control knocked-input border" placeholder="Email Address" />
+                            <input type="email" name="email" class="form-control knocked-input border" placeholder="Email Address" />
                         </div>
 
                         <div class="form-group">
-                            <input type="text" name="registermobile" class="form-control knocked-input border" placeholder="Mobile No" />
+                            <input type="text" name="mobile" class="form-control knocked-input border" placeholder="Mobile No" />
                         </div>
 
                         <div class="form-group">
-                            <input type="password" name="registerpassword" id="registerpassword" class="form-control knocked-input border" placeholder="Password" />
+                            <input type="password" name="password" id="registerpassword" class="form-control knocked-input border" placeholder="Password" />
                         </div>
                         <div class="form-group">
-                            <input type="password" name="registercpassword" class="form-control knocked-input border" placeholder="Confirm Password" />
+                            <input type="password" name="confirm_password" class="form-control knocked-input border" placeholder="Confirm Password" />
                         </div>
 
                         <div class="form-group" id="registerdiv">
-                            <button type="submit" class="btn btn-no-color btn-block text-black knocked-input" name="">Register</button>
+                            <button type="submit" class="btn btn-no-color btn-block text-black knocked-input">Register</button>
                         </div>
 
                         <p class="font-14 text-muted">By registering your details, you agree with our Terms &amp; Conditions , and Privacy and Cookie Policy.</p>
                         <hr />
-                        <a class="text-dark font-weight-bold" id="login-btn" href="#!">Already have an account? | Login</a>
+                        <a class="text-dark font-weight-bold" id="login-btn" href="javascript:;">Already have an account? | Login</a>
                     </form>
                 </div>
             </div>

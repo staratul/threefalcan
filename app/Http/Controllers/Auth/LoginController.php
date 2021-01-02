@@ -46,6 +46,7 @@ class LoginController extends Controller
         $this->validate($request, [
             'email' => 'required|email',
             'password' => 'required',
+            'mobile' => 'required|regex:/[0-9]{10}/|digits:10'
         ]);
 
         if (auth()->attempt(array('email' => $input['email'], 'password' => $input['password']))) {
